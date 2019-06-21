@@ -1,0 +1,13 @@
+<div class="d-flex flex-wrap">
+  <a
+    *ngFor="let data of pageData; let i = index"
+    (click) = "removeColorImage(i)"
+    title= "Click to remove image"
+  >
+    <img src="{{isMobile ? data.thumbnailUrl : data.url}}"/>
+  </a>
+</div>
+
+<div class="text-center mt-4 mb-4">
+  <button (click) = "loadNextPage()" class="btn btn-primary">Show more</button>
+</div>
