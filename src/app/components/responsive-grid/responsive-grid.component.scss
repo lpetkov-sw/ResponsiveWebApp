@@ -1,0 +1,66 @@
+@import "src/_variables.scss";
+
+.grid_wrapper {
+    padding: 32px 0px;
+    background-color: $color_primary;
+}
+
+.content_grid {
+    padding: 32px 0px;
+    
+    .data_btn {
+        position: relative;
+        cursor: pointer;
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            opacity: 0;
+        }
+
+        &:after {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $color_secondary;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+        }
+
+        &:before {
+            display:inline-block;
+            width: 60px;
+            height: 60px;
+            
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+
+            top: 50%;
+            transform: translateY(-50%);
+            
+            z-index: 1;
+            
+            content: '\00d7';
+            border-radius: 50%;
+            
+            font-size: 50px;
+            line-height: 60px;
+            font-weight: bold;
+            text-transform: uppercase;
+            
+            color: $color_white;
+            text-align: center;
+            
+            background-color: $color_black;
+            transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+        }
+
+        &:hover:before,
+        &:hover:after {
+            opacity: 0.5;
+        }
+    }
+}
